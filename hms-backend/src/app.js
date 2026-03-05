@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import patientRoutes from "./routes/patient.routes.js";
+import authregister from "./routes/auth.route.js";
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/patients",patientRoutes);
+app.use("/auth",authregister);
 
 app.get("/",(req,res) => {
     res.send("server is running very well .... relax ....");
